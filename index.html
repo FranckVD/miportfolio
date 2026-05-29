@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-[#050B14] text-slate-900 dark:text-slate-100 font-mono transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_15px_rgba(45,212,191,0.3)]">
+                            <!-- Left tech bracket -->
+                            <polyline points="35,15 15,50 35,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Right tech bracket -->
+                            <polyline points="65,15 85,50 65,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            
+                            <!-- FVD Text -->
+                            <text x="50" y="56" font-family="'JetBrains Mono', monospace" font-weight="800" font-size="22" fill="#2DD4BF" text-anchor="middle">FVD</text>
+                            
+                            <!-- Terminal Cursor -->
+                            <rect x="40" y="65" width="20" height="4" rx="2" fill="#0E9E8A"/>
+                            
+                            <!-- Data connection nodes -->
+                            <circle cx="35" cy="15" r="4" fill="#2DD4BF"/>
+                            <circle cx="35" cy="85" r="4" fill="#2DD4BF"/>
+                            <circle cx="65" cy="15" r="4" fill="#2DD4BF"/>
+                            <circle cx="65" cy="85" r="4" fill="#2DD4BF"/>
+                        </svg>
+                    </div>
+                    <span class="font-display font-extrabold text-xl tracking-tighter text-white bg-clip-text"></span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#inicio" class="nav-link text-sm">Inicio</a>
+                    <a href="#servicios" class="nav-link text-sm">Servicios</a>
+                    <a href="#trayectoria" class="nav-link text-sm">Trayectoria</a>
+                    <a href="#agenda" class="nav-link text-sm">Agendar Cita</a>
+                    <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA.pdf" download class="btn-primary px-5 py-2.5 bg-brand-teal text-white rounded-full text-sm font-bold shadow-md">Descargar CV</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-grid-overlay"></div>
+            <div class="hero-circle" style="width:400px;height:400px;top:-100px;right:-100px;opacity:0.4;"></div>
+            <div class="hero-circle" style="width:300px;height:300px;bottom:-50px;left:-50px;opacity:0.3;"></div>
+
+            <!-- Ola superior -->
+            <svg class="wave" style="top:0;height:70px;" viewBox="0 0 1200 70" preserveAspectRatio="none">
+                <path d="M0,35 C250,0 500,65 750,30 C900,10 1050,55 1200,25 L1200,0 L0,0 Z" fill="rgba(14,158,138,0.12)"/>
+            </svg>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 py-20 lg:py-0">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <!-- Contenido Izquierdo: Foto + Texto -->
+                    <div class="hero-content reveal">
+                        <div class="profile-wrapper mx-auto lg:mx-0 lg:ml-36">
+                            <div class="profile-ring"></div>
+                            <img src="./img/perfillinkedin.jpeg" alt="Ramses Callaú Rocha" class="profile-image">
+                        </div>
+
+                        <div class="hero-badge mx-auto lg:mx-0 lg:ml-32 flex w-fit">
+                            <div class="badge-dot"></div>
+                            Disponible para trabajar
+                        </div>
+                        
+                        <div class="hero-big-text font-extrabold">DATA</div>
+                        <h1 class="hero-title font-display font-extrabold text-white">Hola, soy Ramses</h1>
+                        <p class="hero-subtitle text-accent">Python Developer · Data Engineering · Analytics</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-lg">
+                            Transformo datos en decisiones. Diseño pipelines robustos, automatizo procesos complejos 
+                            y construyo soluciones que impulsan la eficiencia operativa.
+                        </p>
+                        
+                        <div class="hero-tags">
+                            <span class="hero-tag">Python</span>
+                            <span class="hero-tag">SQL</span>
+                            <span class="hero-tag">ETL/ELT</span>
+                            <span class="hero-tag">IA</span>
+                            <span class="hero-tag">BI</span>
+                            <span class="hero-tag">Polars</span>
+                            <span class="hero-tag">Pandas</span>
+
+                        </div>
+
+                        <div class="hero-social">
+                            <span class="hero-social-label text-slate-400">Conectar</span>
+                            <a href="https://www.linkedin.com/in/ramsescallaurocha-icg" target="_blank" class="social-icon" title="LinkedIn">
+                                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="https://github.com/FranckVD" target="_blank" class="social-icon" title="GitHub">
+                                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                            <a href="mailto:callaurocharamses@gmail.com" class="social-icon" title="Email">
+                                <span class="material-symbols-outlined">mail</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contenido Derecho: Animación de Código -->
+                    <div class="flex justify-center lg:justify-end reveal" style="transition-delay: 200ms;">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="dot dot-red"></div>
+                                <div class="dot dot-yellow"></div>
+                                <div class="dot dot-green"></div>
+                            </div>
+                            <div id="terminal-content" class="terminal-body" data-code='<div><span class="code-keyword">class</span> <span class="code-func">DataAutomation</span>:</div><div class="pl-4"><span class="code-keyword">def</span> <span class="code-func">__init__</span>(self) -> <span class="code-keyword">None</span>:</div><div class="pl-8">self.mission: <span class="code-keyword">str</span> = <span class="code-string">"Optimize Efficiency"</span></div><div class="pl-8">self.tools: <span class="code-keyword">list</span>[<span class="code-keyword">str</span>] = [<span class="code-string">"Python"</span>, <span class="code-string">"IA"</span>, <span class="code-string">"SQL"</span>]</div><div class="mt-4 pl-4"><span class="code-keyword">def</span> <span class="code-func">run</span>(self) -> <span class="code-keyword">list</span>[<span class="code-keyword">str</span>]:</div><div class="pl-8"><span class="code-keyword">print</span>(<span class="code-string">f"Starting: {self.mission}"</span>)</div><div class="pl-8">res = [<span class="code-string">f"Processing with {t}..."</span> <span class="code-keyword">for</span> t <span class="code-keyword">in</span> self.tools]</div><div class="pl-8"><span class="code-keyword">print</span>(res)</div><div class="pl-8"><span class="code-keyword">return</span> res</div><div class="mt-4"><span class="code-comment"># Ejecutando pipeline...</span></div><div>engine = DataAutomation()</div><div>engine.run()</div>'>
+                                <!-- El contenido se cargará vía script.js -->
+                                <span class="code-cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Ola inferior -->
+            <svg class="wave" style="bottom:0;height:60px;" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <path d="M0,25 C300,55 600,5 900,38 C1050,55 1150,28 1200,38 L1200,60 L0,60 Z" fill="rgba(14,158,138,0.1)"/>
+            </svg>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="py-24 bg-gradient-to-b from-[#050B14] to-[#0A1628] border-y border-white/5 relative overflow-hidden">
+            <div class="absolute inset-0 hero-pattern opacity-5"></div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-20 space-y-4 reveal">
+                    <h2 class="text-primary-600 font-bold uppercase tracking-[0.2em] text-sm">Servicios Especializados</h2>
+                    <h3 class="font-display text-4xl lg:text-5xl font-extrabold tracking-tight text-white">Soluciones integrales para la gestión moderna.</h3>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group">
+                        <span class="material-symbols-outlined text-5xl mb-8 service-icon">account_tree</span>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Análisis de Procesos</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Diagramación BPMN 2.0 y reingeniería operativa para maximizar la productividad y reducir errores manuales.</p>
+                    </div>
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 100ms;">
+                        <span class="material-symbols-outlined text-5xl mb-8 service-icon">description</span>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Documentación y Control</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Elaboración de manuales SOP, políticas de control interno y estandarización de procedimientos contables.</p>
+                    </div>
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 200ms;">
+                        <span class="material-symbols-outlined text-5xl mb-8 service-icon">database</span>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Ingeniería de Datos</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Diseño de arquitecturas de datos, flujos ETL y administración de bases de datos SQL para asegurar la calidad y fluidez de la información.</p>
+                    </div>
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 300ms;">
+                        <span class="material-symbols-outlined text-5xl mb-8 service-icon">monitoring</span>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Análisis de Datos</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Interpretación de tendencias mediante visualización avanzada y modelos estadísticos para una toma de decisiones basada en evidencia.</p>
+                    </div>
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 400ms;">
+                        <span class="material-symbols-outlined text-5xl mb-8 service-icon">smart_toy</span>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Automatización con IA</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Implementación de soluciones inteligentes y agentes de IA personalizados que optimizan tareas repetitivas y potencian la eficiencia organizacional.</p>
+                    </div>
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 500ms;">
+                        <span class="material-symbols-outlined text-5xl mb-8 service-icon">dashboard</span>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Business Intelligence</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Creación de tableros interactivos y KPIs estratégicos que permiten monitorear el rendimiento del negocio en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trayectoria Section -->
+        <section id="trayectoria" class="py-24 bg-brand-dark relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                <div class="flex flex-col lg:flex-row gap-20">
+                    <div class="lg:w-1/3 reveal">
+                        <h2 class="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4">Trayectoria</h2>
+                        <h3 class="font-display text-4xl font-extrabold tracking-tight mb-6 text-white">Experiencia Profesional</h3>
+                        <p class="text-slate-400 mb-8">+3 años de experiencia como profesional en Información y Control de Gestión con un enfoque práctico en resultados tecnológicos.</p>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest">Habilidades Técnicas</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Python</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Automatización de procesos (RPA)</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Business Intelligence</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Bases de datos</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">SQL</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Contabilidad</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Modelamiento de Procesos</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Análisis y Modelamiento de Datos</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">MS Office</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest">Soft Skills</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Mejora de Procesos</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent rounded-lg text-xs border border-accent/20">Análisis de Datos</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Gestión Financiera</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent rounded-lg text-xs border border-accent/20">Trabajo en equipo</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Gestión documental</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Resolución de problemas</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Comunicación asertiva</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Adaptabilidad</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Honestidad</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Responsabilidad</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Comunicación efectiva</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest">Idiomas</h4>
+                                <div class="flex gap-6">
+                                    <div class="flex flex-col">
+                                        <span class="text-sm text-white">Español</span>
+                                        <span class="text-xs text-slate-500 uppercase">Nativo</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="text-sm text-white">Inglés</span>
+                                        <span class="text-xs text-slate-500 uppercase">Básico (A2)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-2/3 space-y-12 relative border-l-2 border-white/5 ml-3">
+                        <!-- Proyecto 1: Sector Salud -->
+                        <a href="https://github.com/FranckVD/Gestion_Inventario_Produccion" target="_blank" class="timeline-dot relative pl-10 reveal group block hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                            <span class="text-xs text-primary-600 uppercase tracking-widest">Nov 2025 - Actualidad</span>
+                            <h4 class="text-xl font-extrabold mt-1 text-white group-hover:text-primary-600 transition-colors">Proyecto: Control de Inventarios (Sector Salud)</h4>
+                            <p class="text-slate-500 text-sm mb-3 italic">Proyecto Independiente - Desarrollo de Software</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Diseñé y desarrollé un sistema de control de existencias para insumos críticos en el sector salud (diálisis). Utilicé Python (Streamlit) y una base de datos SQLite para garantizar trazabilidad y disponibilidad de stock en tiempo real.</p>
+                        </a>
+
+                        <!-- Proyecto 2: Sector Comercial -->
+                        <a href="https://github.com/FranckVD/validar_facturas_excel_pdf" target="_blank" class="timeline-dot relative pl-10 reveal group block hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                            <span class="text-xs text-primary-600 uppercase tracking-widest">Nov 2025 - Actualidad</span>
+                            <h4 class="text-xl font-extrabold mt-1 text-white group-hover:text-primary-600 transition-colors">Proyecto: Auditoría Automatizada de Facturas</h4>
+                            <p class="text-slate-500 text-sm mb-3 italic">Proyecto Independiente - Automatización de procesos</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Implementé una herramienta automatizada con UI en CustomTkinter que permite validar y conciliar facturas. Logré reducir significativamente los errores manuales y los tiempos de procesamiento.</p>
+                        </a>
+                        
+                        <!-- Experiencia: Analista -->
+                        <div class="timeline-dot relative pl-10 reveal group">
+                            <span class="text-xs text-primary-600 uppercase tracking-widest">May 2022 - Oct 2025</span>
+                            <h4 class="text-xl font-extrabold mt-1 text-white">Analista Administrativo Financiero</h4>
+                            <p class="text-slate-500 text-sm mb-3 italic">Consultorio Jurídico "Vidal-Escalante & Asociados"</p>
+                            <ul class="text-slate-400 list-disc list-outside ml-4 space-y-2 text-sm">
+                                <li>Optimización de bases de datos para control de gastos y clientes.</li>
+                                <li>Gestioné y controlé un sistema contable, garantizando la integridad, actualización y trazabilidad de la información financiera.</li>
+                                <li>Elaboré conciliaciones bancarias y reportes financieros gerenciales.</li>
+                                <li>Estandaricé y documenté procedimientos administrativos para fortalecer el control interno y el cumplimiento normativo.</li>
+                                <li>Analicé, diseñé y desarrollé un sistema de gestión de documentos (expedientes y archivos físicos).</li>
+                                <li>Creé canales de datos (ETL) para el análisis del sistema ERP de la empresa.</li>
+                                <li>Desarrollé dashboards Financieros para la toma de decisiones basadas en datos</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experiencia: Pasante -->
+                        <div class="timeline-dot relative pl-10 reveal group">
+                            <span class="text-xs text-primary-600 uppercase tracking-widest">Feb 2022 - May 2022</span>
+                            <h4 class="text-xl font-extrabold mt-1 text-white">Pasante Administrativo Contable</h4>
+                            <p class="text-slate-500 text-sm mb-3 italic">Consultorio Jurídico "Vidal-Escalante & Asociados"</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Apoyo en registros contables, conciliación de cuentas y creación de la base de datos inicial para la gestión de la empresa.</p>
+                        </div>
+
+                        <!-- Educación -->
+                        <div class="timeline-dot relative pl-10 reveal group">
+                            <span class="text-xs text-primary-600 uppercase tracking-widest">2018 - 2023</span>
+                            <h4 class="text-xl font-extrabold mt-1 text-white">Lic. en Información y Control de Gestión</h4>
+                            <p class="text-slate-500 text-sm mb-3 italic">UAGRM - Graduación Directa con Honores</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Formación técnica superior en contabilidad y diseño de sistemas de información organizacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agenda Section -->
+        <section id="agenda" class="py-24 px-6 lg:px-12 bg-[#050B14] border-t border-white/5 relative">
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="font-display text-4xl font-extrabold text-white mb-4 tracking-tight">Hablemos de tu próximo proyecto</h2>
+                    <p class="text-slate-400 text-lg">Seleccione un horario disponible para una sesión estratégica gratuita.</p>
+                </div>
+                
+                <div class="bg-brand-dark rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 reveal">
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/callaurocharamses/30min" style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 bg-brand-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 flex items-center justify-center">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                        <polyline points="35,15 15,50 35,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="65,15 85,50 65,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="50" y="56" font-family="monospace" font-weight="800" font-size="22" fill="#2DD4BF" text-anchor="middle">FVD</text>
+                        <rect x="40" y="65" width="20" height="4" rx="2" fill="#0E9E8A"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-white text-lg tracking-tight">Ramses Callaú Rocha</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-widest">Información y Control de Gestión</span>
+                </div>
+            </div>
+            
+            <div class="flex gap-8">
+                <a href="mailto:callaurocharamses@gmail.com" class="text-slate-400 hover:text-primary-600 transition-colors flex items-center gap-2 group">
+                    <span class="material-symbols-outlined text-sm">mail</span>
+                    <span class="text-xs">Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/ramsescallaurocha-icg" target="_blank" class="text-slate-400 hover:text-primary-600 transition-colors flex items-center gap-2 group">
+                    <span class="material-symbols-outlined text-sm">share</span>
+                    <span class="text-xs">LinkedIn</span>
+                </a>
+            </div>
+            
+            <p class="text-slate-400 text-sm leading-relaxed text-center md:text-right">
+                © 2026 by FranckVD<br>
+                <span class="text-slate-500">Santa Cruz, Bolivia</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>              </a>
+            </div>
+            
+            <p class="text-slate-400 text-sm leading-relaxed text-center md:text-right">
+                © 2026 by FranckVD<br>
+                <span class="text-slate-500">Santa Cruz, Bolivia</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

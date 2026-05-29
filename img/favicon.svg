@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Left tech bracket -->
+    <polyline points="35,15 15,50 35,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Right tech bracket -->
+    <polyline points="65,15 85,50 65,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- FVD Text -->
+    <text x="50" y="56" font-family="monospace" font-weight="800" font-size="24" fill="#2DD4BF" text-anchor="middle" letter-spacing="1">FVD</text>
+    
+    <!-- Terminal Cursor -->
+    <rect x="40" y="65" width="20" height="4" rx="2" fill="#0E9E8A"/>
+    
+    <!-- Data connection nodes -->
+    <circle cx="35" cy="15" r="4" fill="#2DD4BF"/>
+    <circle cx="35" cy="85" r="4" fill="#2DD4BF"/>
+    <circle cx="65" cy="15" r="4" fill="#2DD4BF"/>
+    <circle cx="65" cy="85" r="4" fill="#2DD4BF"/>
+</svg>
