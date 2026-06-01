@@ -53,7 +53,7 @@
                 </a>
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#inicio" class="nav-link text-sm">Inicio</a>
-                    <a href="#servicios" class="nav-link text-sm">Servicios</a>
+                    <a href="#proyectos" class="nav-link text-sm">Proyectos</a>
                     <a href="#trayectoria" class="nav-link text-sm">Trayectoria</a>
                     <a href="#agenda" class="nav-link text-sm">Agendar Cita</a>
                     <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA.pdf" download class="btn-primary px-5 py-2.5 bg-brand-teal text-white rounded-full text-sm font-bold shadow-md">Descargar CV</a>
@@ -146,45 +146,74 @@
             </svg>
         </section>
 
-        <!-- Services Section -->
-        <section id="servicios" class="py-24 bg-gradient-to-b from-[#050B14] to-[#0A1628] border-y border-white/5 relative overflow-hidden">
+        <!-- Proyectos Section -->
+        <section id="proyectos" class="py-24 bg-gradient-to-b from-[#050B14] to-[#0A1628] border-y border-white/5 relative overflow-hidden">
             <div class="absolute inset-0 hero-pattern opacity-5"></div>
             <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-20 space-y-4 reveal">
-                    <h2 class="text-primary-600 font-bold uppercase tracking-[0.2em] text-sm">Servicios Especializados</h2>
-                    <h3 class="font-display text-4xl lg:text-5xl font-extrabold tracking-tight text-white">Soluciones integrales para la gestión moderna.</h3>
+                    <h2 class="text-primary-600 font-bold uppercase tracking-[0.2em] text-sm">Portafolio de Proyectos</h2>
+                    <h3 class="font-display text-4xl lg:text-5xl font-extrabold tracking-tight text-white">Soluciones aplicadas y casos de éxito.</h3>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group">
+                    <!-- Análisis de Procesos -->
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group cursor-pointer" data-status="coming-soon">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">account_tree</span>
                         <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Análisis de Procesos</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Diagramación BPMN 2.0 y reingeniería operativa para maximizar la productividad y reducir errores manuales.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Diagramación BPMN 2.0 y reingeniería operativa para maximizar la productividad.</p>
+                        <span class="text-xs font-bold text-primary-600 uppercase tracking-widest flex items-center gap-2">
+                            En Desarrollo <span class="material-symbols-outlined text-sm">construction</span>
+                        </span>
                     </div>
-                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 100ms;">
+
+                    <!-- Documentación y Control -->
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group cursor-pointer" data-status="coming-soon" style="transition-delay: 100ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">description</span>
                         <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Documentación y Control</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Elaboración de manuales SOP, políticas de control interno y estandarización de procedimientos contables.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Elaboración de manuales SOP y estandarización de procedimientos contables.</p>
+                        <span class="text-xs font-bold text-accent uppercase tracking-widest flex items-center gap-2">
+                            En Desarrollo <span class="material-symbols-outlined text-sm">construction</span>
+                        </span>
                     </div>
-                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 200ms;">
+
+                    <!-- Ingeniería de Datos -->
+                    <a href="https://github.com/FranckVD/validar_facturas_excel_pdf" target="_blank" class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group block" style="transition-delay: 200ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">database</span>
                         <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Ingeniería de Datos</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Diseño de arquitecturas de datos, flujos ETL y administración de bases de datos SQL para asegurar la calidad y fluidez de la información.</p>
-                    </div>
-                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 300ms;">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Extracción de datos y auditoría automatizada de facturas (Excel/PDF).</p>
+                        <span class="text-xs font-bold text-primary-600 uppercase tracking-widest flex items-center gap-2">
+                            Ver Proyecto <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
+                    </a>
+
+                    <!-- Análisis de Datos -->
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group cursor-pointer" data-status="coming-soon" style="transition-delay: 300ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">monitoring</span>
                         <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Análisis de Datos</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Interpretación de tendencias mediante visualización avanzada y modelos estadísticos para una toma de decisiones basada en evidencia.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Interpretación de tendencias mediante visualización avanzada y modelos estadísticos.</p>
+                        <span class="text-xs font-bold text-accent uppercase tracking-widest flex items-center gap-2">
+                            En Desarrollo <span class="material-symbols-outlined text-sm">pending</span>
+                        </span>
                     </div>
-                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 400ms;">
+
+                    <!-- Automatización con IA -->
+                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group cursor-pointer" data-status="coming-soon" style="transition-delay: 400ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">smart_toy</span>
                         <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Automatización con IA</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Implementación de soluciones inteligentes y agentes de IA personalizados que optimizan tareas repetitivas y potencian la eficiencia organizacional.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Implementación de agentes de IA personalizados para optimizar tareas repetitivas.</p>
+                        <span class="text-xs font-bold text-primary-600 uppercase tracking-widest flex items-center gap-2">
+                            En Desarrollo <span class="material-symbols-outlined text-sm">bolt</span>
+                        </span>
                     </div>
-                    <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group" style="transition-delay: 500ms;">
+
+                    <!-- Business Intelligence -->
+                    <a href="https://github.com/FranckVD/Gestion_Inventario_Produccion" target="_blank" class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group block" style="transition-delay: 500ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">dashboard</span>
                         <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Business Intelligence</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Creación de tableros interactivos y KPIs estratégicos que permiten monitorear el rendimiento del negocio en tiempo real.</p>
-                    </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Sistema de Control de Inventarios con Dashboard interactivo y KPIs.</p>
+                        <span class="text-xs font-bold text-accent uppercase tracking-widest flex items-center gap-2">
+                            Ver Proyecto <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -248,22 +277,6 @@
                     </div>
                     
                     <div class="lg:w-2/3 space-y-12 relative border-l-2 border-white/5 ml-3">
-                        <!-- Proyecto 1: Sector Salud -->
-                        <a href="https://github.com/FranckVD/Gestion_Inventario_Produccion" target="_blank" class="timeline-dot relative pl-10 reveal group block hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-                            <span class="text-xs text-primary-600 uppercase tracking-widest">Nov 2025 - Actualidad</span>
-                            <h4 class="text-xl font-extrabold mt-1 text-white group-hover:text-primary-600 transition-colors">Proyecto: Control de Inventarios (Sector Salud)</h4>
-                            <p class="text-slate-500 text-sm mb-3 italic">Proyecto Independiente - Desarrollo de Software</p>
-                            <p class="text-slate-400 text-sm leading-relaxed">Diseñé y desarrollé un sistema de control de existencias para insumos críticos en el sector salud (diálisis). Utilicé Python (Streamlit) y una base de datos SQLite para garantizar trazabilidad y disponibilidad de stock en tiempo real.</p>
-                        </a>
-
-                        <!-- Proyecto 2: Sector Comercial -->
-                        <a href="https://github.com/FranckVD/validar_facturas_excel_pdf" target="_blank" class="timeline-dot relative pl-10 reveal group block hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-                            <span class="text-xs text-primary-600 uppercase tracking-widest">Nov 2025 - Actualidad</span>
-                            <h4 class="text-xl font-extrabold mt-1 text-white group-hover:text-primary-600 transition-colors">Proyecto: Auditoría Automatizada de Facturas</h4>
-                            <p class="text-slate-500 text-sm mb-3 italic">Proyecto Independiente - Automatización de procesos</p>
-                            <p class="text-slate-400 text-sm leading-relaxed">Implementé una herramienta automatizada con UI en CustomTkinter que permite validar y conciliar facturas. Logré reducir significativamente los errores manuales y los tiempos de procesamiento.</p>
-                        </a>
-                        
                         <!-- Experiencia: Analista -->
                         <div class="timeline-dot relative pl-10 reveal group">
                             <span class="text-xs text-primary-600 uppercase tracking-widest">May 2022 - Oct 2025</span>
@@ -317,39 +330,30 @@
     </main>
 
     <footer class="py-12 bg-brand-dark border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                        <polyline points="35,15 15,50 35,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <polyline points="65,15 85,50 65,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <text x="50" y="56" font-family="monospace" font-weight="800" font-size="22" fill="#2DD4BF" text-anchor="middle">FVD</text>
-                        <rect x="40" y="65" width="20" height="4" rx="2" fill="#0E9E8A"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-extrabold text-white text-lg tracking-tight">Ramses Callaú Rocha</span>
-                    <span class="text-xs text-slate-500 uppercase tracking-widest">Información y Control de Gestión</span>
-                </div>
-            </div>
-            
-            <div class="flex gap-8">
-                <a href="mailto:callaurocharamses@gmail.com" class="text-slate-400 hover:text-primary-600 transition-colors flex items-center gap-2 group">
-                    <span class="material-symbols-outlined text-sm">mail</span>
-                    <span class="text-xs">Email</span>
-                </a>
-                <a href="https://www.linkedin.com/in/ramsescallaurocha-icg" target="_blank" class="text-slate-400 hover:text-primary-600 transition-colors flex items-center gap-2 group">
-                    <span class="material-symbols-outlined text-sm">share</span>
-                    <span class="text-xs">LinkedIn</span>
-                </a>
-            </div>
-            
-            <p class="text-slate-400 text-sm leading-relaxed text-center md:text-right">
-                © 2026 by FranckVD<br>
-                <span class="text-slate-500">Santa Cruz, Bolivia</span>
-            </p>
-        </div>
+        <!-- ... contenido del footer ... -->
     </footer>
+
+    <!-- Modal de Mantenimiento -->
+    <div id="maintenance-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-[#050B14]/80 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative bg-brand-dark border border-white/10 rounded-[2.5rem] p-8 md:p-12 max-w-lg w-full shadow-2xl reveal-modal">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="text-center space-y-6">
+                <div class="w-20 h-20 bg-primary-600/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <span class="material-symbols-outlined text-5xl text-primary-600 animate-pulse">construction</span>
+                </div>
+                <h3 class="font-display text-3xl font-extrabold text-white">Proyecto en Desarrollo</h3>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Estoy trabajando arduamente en esta sección para ofrecerte una experiencia de alta calidad. ¡Pronto estará disponible!
+                </p>
+                <div class="pt-6">
+                    <button onclick="closeModal()" class="btn-primary px-8 py-3 bg-primary-600 text-white rounded-full font-bold">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

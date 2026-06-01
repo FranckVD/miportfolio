@@ -361,3 +361,38 @@
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 .wave { position: absolute; left: 0; right: 0; z-index: 1; pointer-events: none; }
+
+/* Modal Styles */
+#maintenance-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.reveal-modal {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#maintenance-modal.active .reveal-modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+[data-status="coming-soon"] {
+    position: relative;
+    overflow: hidden;
+}
+
+[data-status="coming-soon"]::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(14, 158, 138, 0.05) 100%);
+    pointer-events: none;
+}

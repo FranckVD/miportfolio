@@ -94,3 +94,28 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('shadow-md', 'py-1');
     }
 });
+
+// Lógica del Modal de Mantenimiento
+const modal = document.getElementById('maintenance-modal');
+
+function openModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevenir scroll al estar abierto
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar modal con la tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Asignar eventos a las tarjetas "coming-soon"
+document.querySelectorAll('[data-status="coming-soon"]').forEach(card => {
+    card.addEventListener('click', openModal);
+});
