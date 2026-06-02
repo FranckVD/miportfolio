@@ -329,22 +329,22 @@
         </section>
     </main>
 
-    <footer class="py-12 bg-brand-dark border-t border-white/5">
-        <!-- ... contenido del footer ... -->
-    </footer>
-
-    <!-- Modal de Mantenimiento -->
-    <div id="maintenance-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <!-- Modal de Mantenimiento (Global Overlay) -->
+    <div id="maintenance-modal" 
+         class="fixed inset-0 z-[100] hidden items-center justify-center p-4" 
+         role="dialog" 
+         aria-modal="true" 
+         aria-labelledby="modal-title">
         <div class="absolute inset-0 bg-[#050B14]/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="relative bg-brand-dark border border-white/10 rounded-[2.5rem] p-8 md:p-12 max-w-lg w-full shadow-2xl reveal-modal">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors" aria-label="Cerrar modal">
                 <span class="material-symbols-outlined">close</span>
             </button>
             <div class="text-center space-y-6">
                 <div class="w-20 h-20 bg-primary-600/10 rounded-full flex items-center justify-center mx-auto mb-8">
                     <span class="material-symbols-outlined text-5xl text-primary-600 animate-pulse">construction</span>
                 </div>
-                <h3 class="font-display text-3xl font-extrabold text-white">Proyecto en Desarrollo</h3>
+                <h3 id="modal-title" class="font-display text-3xl font-extrabold text-white">Proyecto en Desarrollo</h3>
                 <p class="text-slate-400 text-lg leading-relaxed">
                     Estoy trabajando arduamente en esta sección para ofrecerte una experiencia de alta calidad. ¡Pronto estará disponible!
                 </p>
@@ -354,6 +354,41 @@
             </div>
         </div>
     </div>
+
+    <footer class="py-12 bg-brand-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 flex items-center justify-center">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                        <polyline points="35,15 15,50 35,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="65,15 85,50 65,85" fill="none" stroke="#0E9E8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="50" y="56" font-family="monospace" font-weight="800" font-size="22" fill="#2DD4BF" text-anchor="middle">FVD</text>
+                        <rect x="40" y="65" width="20" height="4" rx="2" fill="#0E9E8A"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-white text-lg tracking-tight">Ramses Callaú Rocha</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-widest">Información y Control de Gestión</span>
+                </div>
+            </div>
+            
+            <div class="flex gap-8">
+                <a href="mailto:callaurocharamses@gmail.com" class="text-slate-400 hover:text-primary-600 transition-colors flex items-center gap-2 group">
+                    <span class="material-symbols-outlined text-sm">mail</span>
+                    <span class="text-xs">Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/ramsescallaurocha-icg" target="_blank" class="text-slate-400 hover:text-primary-600 transition-colors flex items-center gap-2 group">
+                    <span class="material-symbols-outlined text-sm">share</span>
+                    <span class="text-xs">LinkedIn</span>
+                </a>
+            </div>
+            
+            <p class="text-slate-400 text-sm leading-relaxed text-center md:text-right">
+                © 2026 Hecho con ♥️ by FranckVD<br>
+                <span class="text-slate-500">Santa Cruz, Bolivia</span>
+            </p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
