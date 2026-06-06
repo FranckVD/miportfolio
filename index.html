@@ -58,6 +58,28 @@
                     <a href="#agenda" class="nav-link text-sm">Agendar Cita</a>
                     <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA.pdf" download class="btn-primary px-5 py-2.5 bg-brand-teal text-white rounded-full text-sm font-bold shadow-md">Descargar CV</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center text-white p-2" aria-label="Abrir menú">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Floating Box) -->
+        <div id="mobile-menu" class="absolute top-20 right-6 w-64 bg-brand-dark/95 backdrop-blur-2xl border border-white/10 rounded-3xl z-[100] hidden shadow-2xl overflow-hidden">
+            <div class="p-6 flex flex-col gap-4">
+                <nav class="flex flex-col gap-4">
+                    <a href="#inicio" class="nav-link mobile-nav-link text-sm font-bold">Inicio</a>
+                    <a href="#proyectos" class="nav-link mobile-nav-link text-sm font-bold">Proyectos</a>
+                    <a href="#trayectoria" class="nav-link mobile-nav-link text-sm font-bold">Trayectoria</a>
+                    <a href="#agenda" class="nav-link mobile-nav-link text-sm font-bold">Agendar Cita</a>
+                </nav>
+                <hr class="border-white/10 my-1">
+                <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA.pdf" download class="btn-primary w-full py-3 bg-brand-teal text-white rounded-2xl text-xs font-bold shadow-xl flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    Descargar CV
+                </a>
             </div>
         </div>
     </nav>
@@ -321,9 +343,14 @@
                     <p class="text-slate-400 text-lg">Seleccione un horario disponible para una sesión estratégica gratuita.</p>
                 </div>
                 
-                <div class="bg-brand-dark rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 reveal">
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/callaurocharamses/30min" style="min-width:320px;height:700px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <div class="flex justify-center reveal px-4">
+                    <a href="https://calendly.com/callaurocharamses/30min" 
+                       target="_blank" 
+                       class="btn-navy-teal animate-tech-pulse inline-flex items-center justify-center gap-2 px-5 py-3 md:px-10 md:py-5 text-white rounded-full text-[14px] md:text-xl font-bold shadow-2xl transition-all w-full max-w-[280px] md:max-w-none md:w-auto text-center">
+                        <div class="shimmer-line"></div>
+                        <span class="material-symbols-outlined text-[18px] md:text-2xl">calendar_today</span>
+                        <span>Reservar llamada gratis</span>
+                    </a>
                 </div>
             </div>
         </section>

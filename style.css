@@ -396,3 +396,59 @@
     background: linear-gradient(135deg, transparent 0%, rgba(14, 158, 138, 0.05) 100%);
     pointer-events: none;
 }
+
+/* Advanced Tech-Pulse & Liquid Shimmer */
+@keyframes tech-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(14, 158, 138, 0.3); }
+    50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(93, 202, 165, 0.5); }
+}
+
+@keyframes liquid-shimmer {
+    0% { left: -150%; opacity: 0; }
+    20% { opacity: 1; }
+    40% { left: 150%; opacity: 0; }
+    100% { left: 150%; opacity: 0; }
+}
+
+.animate-tech-pulse {
+    animation: tech-pulse 4s ease-in-out infinite;
+}
+
+.btn-navy-teal {
+    background: linear-gradient(135deg, #0A1628 0%, #0E9E8A 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.btn-navy-teal .shimmer-line {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: liquid-shimmer 3s infinite;
+    pointer-events: none;
+    z-index: 2; /* Ponerlo por encima del fondo */
+}
+
+/* Asegurar que el texto esté por encima del shimmer si es necesario */
+.btn-navy-teal span {
+    position: relative;
+    z-index: 3;
+}
+
+.btn-navy-teal:hover {
+    border-color: var(--brand-teal-light);
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 20px 40px rgba(14, 158, 138, 0.4);
+}

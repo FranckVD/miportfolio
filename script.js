@@ -108,10 +108,40 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Cerrar modal con la tecla Escape
+// Lógica del Menú Móvil
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+function toggleMobileMenu(e) {
+    if (e) e.stopPropagation();
+    mobileMenu.classList.toggle('hidden');
+}
+
+function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+}
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+}
+
+// Cerrar menú al hacer clic fuera de él
+document.addEventListener('click', (e) => {
+    if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+    }
+});
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+// Cerrar modal o menú con la tecla Escape
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
+    if (e.key === 'Escape') {
+        if (modal.classList.contains('active')) closeModal();
+        closeMobileMenu();
     }
 });
 
