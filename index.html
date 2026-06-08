@@ -52,17 +52,45 @@
                     <span class="font-display font-extrabold text-xl tracking-tighter text-white bg-clip-text"></span>
                 </a>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#inicio" class="nav-link text-sm">Inicio</a>
-                    <a href="#proyectos" class="nav-link text-sm">Proyectos</a>
-                    <a href="#trayectoria" class="nav-link text-sm">Trayectoria</a>
-                    <a href="#agenda" class="nav-link text-sm">Agendar Cita</a>
-                    <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA.pdf" download class="btn-primary px-5 py-2.5 bg-brand-teal text-white rounded-full text-sm font-bold shadow-md">Descargar CV</a>
+                    <a href="#inicio" class="nav-link text-sm" data-i18n="nav_inicio">Inicio</a>
+                    <a href="#proyectos" class="nav-link text-sm" data-i18n="nav_proyectos">Proyectos</a>
+                    <a href="#trayectoria" class="nav-link text-sm" data-i18n="nav_trayectoria">Trayectoria</a>
+                    <a href="#agenda" class="nav-link text-sm" data-i18n="nav_agenda">Agendar Cita</a>
+                    
+                    <!-- Idioma Switcher -->
+                    <button id="lang-switcher" class="flex items-center gap-2 text-slate-400 hover:text-brand-teal-light transition-colors text-sm font-bold border border-white/10 rounded-full px-3 py-1 bg-white/5">
+                        <span class="material-symbols-outlined text-lg">language</span>
+                        <span id="current-lang">ES</span>
+                    </button>
+
+                    <!-- CV Dropdown -->
+                    <div class="relative group" id="cv-dropdown-wrapper">
+                        <button id="cv-dropdown-btn" class="btn-primary px-5 py-2.5 bg-brand-teal text-white rounded-full text-sm font-bold shadow-md flex items-center gap-2">
+                            <span data-i18n="btn_cv">Descargar CV</span>
+                            <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                        </button>
+                        <div id="cv-menu" class="absolute top-full right-0 mt-2 w-48 bg-brand-dark border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 overflow-hidden">
+                            <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA - ES.pdf" download class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:bg-brand-teal/10 hover:text-brand-teal transition-colors">
+                                <span class="material-symbols-outlined text-base">description</span>
+                                <span data-i18n="cv_es">Español</span>
+                            </a>
+                            <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA - EN.pdf" download class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:bg-brand-teal/10 hover:text-brand-teal transition-colors border-t border-white/5">
+                                <span class="material-symbols-outlined text-base">description</span>
+                                <span data-i18n="cv_en">Inglés</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden flex items-center text-white p-2" aria-label="Abrir menú">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
+                <div class="flex items-center gap-4 md:hidden">
+                    <button id="mobile-lang-switcher" class="text-slate-400 p-2 border border-white/10 rounded-xl">
+                        <span class="material-symbols-outlined">language</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="flex items-center text-white p-2" aria-label="Abrir menú">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -70,16 +98,23 @@
         <div id="mobile-menu" class="absolute top-20 right-6 w-64 bg-brand-dark/95 backdrop-blur-2xl border border-white/10 rounded-3xl z-[100] hidden shadow-2xl overflow-hidden">
             <div class="p-6 flex flex-col gap-4">
                 <nav class="flex flex-col gap-4">
-                    <a href="#inicio" class="nav-link mobile-nav-link text-sm font-bold">Inicio</a>
-                    <a href="#proyectos" class="nav-link mobile-nav-link text-sm font-bold">Proyectos</a>
-                    <a href="#trayectoria" class="nav-link mobile-nav-link text-sm font-bold">Trayectoria</a>
-                    <a href="#agenda" class="nav-link mobile-nav-link text-sm font-bold">Agendar Cita</a>
+                    <a href="#inicio" class="nav-link mobile-nav-link text-sm font-bold" data-i18n="nav_inicio">Inicio</a>
+                    <a href="#proyectos" class="nav-link mobile-nav-link text-sm font-bold" data-i18n="nav_proyectos">Proyectos</a>
+                    <a href="#trayectoria" class="nav-link mobile-nav-link text-sm font-bold" data-i18n="nav_trayectoria">Trayectoria</a>
+                    <a href="#agenda" class="nav-link mobile-nav-link text-sm font-bold" data-i18n="nav_agenda">Agendar Cita</a>
                 </nav>
                 <hr class="border-white/10 my-1">
-                <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA.pdf" download class="btn-primary w-full py-3 bg-brand-teal text-white rounded-2xl text-xs font-bold shadow-xl flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined text-sm">download</span>
-                    Descargar CV
-                </a>
+                <div class="flex flex-col gap-2">
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest px-2" data-i18n="btn_cv">Descargar CV</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA - ES.pdf" download class="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 text-white rounded-xl text-[10px] font-bold">
+                            ES
+                        </a>
+                        <a href="./MyCurriculum/CV-RAMSES CALLAU ROCHA - EN.pdf" download class="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 text-white rounded-xl text-[10px] font-bold">
+                            EN
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -108,13 +143,13 @@
 
                         <div class="hero-badge mx-auto lg:mx-0 lg:ml-32 flex w-fit">
                             <div class="badge-dot"></div>
-                            Disponible para trabajar
+                            <span data-i18n="hero_badge">Disponible para trabajar</span>
                         </div>
                         
                         <div class="hero-big-text font-extrabold">DATA</div>
-                        <h1 class="hero-title font-display font-extrabold text-white">Hola, soy Ramses</h1>
-                        <p class="hero-subtitle text-accent">Python Developer · Data Engineering · Analytics</p>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-lg">
+                        <h1 class="hero-title font-display font-extrabold text-white" data-i18n="hero_title">Hola, soy Ramses</h1>
+                        <p class="hero-subtitle text-accent" data-i18n="hero_subtitle">Python Developer · Data Engineering · Analytics</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-lg" data-i18n="hero_desc">
                             Transformo datos en decisiones. Diseño pipelines robustos, automatizo procesos complejos 
                             y construyo soluciones que impulsan la eficiencia operativa.
                         </p>
@@ -131,7 +166,7 @@
                         </div>
 
                         <div class="hero-social">
-                            <span class="hero-social-label text-slate-400">Conectar</span>
+                            <span class="hero-social-label text-slate-400" data-i18n="hero_connect">Conectar</span>
                             <a href="https://www.linkedin.com/in/ramsescallaurocha-icg" target="_blank" class="social-icon" title="LinkedIn">
                                 <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
@@ -152,7 +187,7 @@
                                 <div class="dot dot-yellow"></div>
                                 <div class="dot dot-green"></div>
                             </div>
-                            <div id="terminal-content" class="terminal-body" data-code='<div><span class="code-keyword">class</span> <span class="code-func">DataAutomation</span>:</div><div class="pl-4"><span class="code-keyword">def</span> <span class="code-func">__init__</span>(self) -> <span class="code-keyword">None</span>:</div><div class="pl-8">self.mission: <span class="code-keyword">str</span> = <span class="code-string">"Optimize Efficiency"</span></div><div class="pl-8">self.tools: <span class="code-keyword">list</span>[<span class="code-keyword">str</span>] = [<span class="code-string">"Python"</span>, <span class="code-string">"IA"</span>, <span class="code-string">"SQL"</span>]</div><div class="mt-4 pl-4"><span class="code-keyword">def</span> <span class="code-func">run</span>(self) -> <span class="code-keyword">list</span>[<span class="code-keyword">str</span>]:</div><div class="pl-8"><span class="code-keyword">print</span>(<span class="code-string">f"Starting: {self.mission}"</span>)</div><div class="pl-8">res = [<span class="code-string">f"Processing with {t}..."</span> <span class="code-keyword">for</span> t <span class="code-keyword">in</span> self.tools]</div><div class="pl-8"><span class="code-keyword">print</span>(res)</div><div class="pl-8"><span class="code-keyword">return</span> res</div><div class="mt-4"><span class="code-comment"># Ejecutando pipeline...</span></div><div>engine = DataAutomation()</div><div>engine.run()</div>'>
+                            <div id="terminal-content" class="terminal-body" data-code='<div><span class="code-keyword">class</span> <span class="code-func">DataAutomation</span>:</div><div class="pl-4"><span class="code-keyword">def</span> <span class="code-func">__init__</span>(self) -> <span class="code-keyword">None</span>:</div><div class="pl-8">self.mission: <span class="code-keyword">str</span> = <span class="code-string">"Optimize Efficiency"</span></div><div class="pl-8">self.tools: <span class="code-keyword">list</span>[<span class="code-keyword">str</span>] = [<span class="code-string">"Python"</span>, <span class="code-string">"IA"</span>, <span class="code-string">"SQL"</span>]</div><div class="mt-4 pl-4"><span class="code-keyword">def</span> <span class="code-func">run</span>(self) -> <span class="code-keyword">list</span>[<span class="code-keyword">str</span>]:</div><div class="pl-8"><span class="code-keyword">print</span>(<span class="code-string">f"Starting: {self.mission}"</span>)</div><div class="pl-8">res = [<span class="code-string">f"Processing with {t}..."</span> <span class="code-keyword">for</span> t <span class="code-keyword">in</span> self.tools]</div><div class="pl-8"><span class="code-keyword">print</span>(res)</div><div class="pl-8"><span class="code-keyword">return</span> res</div><div class="mt-4"><span class="code-comment"># Ejecutando pipeline...</span></div><div>engine = DataAutomation()</div><div>engine.run()</div>' data-i18n-code="terminal_code">
                                 <!-- El contenido se cargará vía script.js -->
                                 <span class="code-cursor"></span>
                             </div>
@@ -173,67 +208,67 @@
             <div class="absolute inset-0 hero-pattern opacity-5"></div>
             <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-20 space-y-4 reveal">
-                    <h2 class="text-primary-600 font-bold uppercase tracking-[0.2em] text-sm">Portafolio de Proyectos</h2>
-                    <h3 class="font-display text-4xl lg:text-5xl font-extrabold tracking-tight text-white">Soluciones aplicadas y casos de éxito.</h3>
+                    <h2 class="text-primary-600 font-bold uppercase tracking-[0.2em] text-sm" data-i18n="projects_title_small">Portafolio de Proyectos</h2>
+                    <h3 class="font-display text-4xl lg:text-5xl font-extrabold tracking-tight text-white" data-i18n="projects_title_big">Soluciones aplicadas y casos de éxito.</h3>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Ingeniería de Datos -->
                     <a href="https://github.com/FranckVD/validar_facturas_excel_pdf" target="_blank" class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group block">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">database</span>
-                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Ingeniería de Datos</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Diseño de arquitecturas de datos, flujos ETL y administración de bases de datos SQL para asegurar la calidad y fluidez de la información.</p>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white" data-i18n="project_1_title">Ingeniería de Datos</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="project_1_desc">Diseño de arquitecturas de datos, flujos ETL y administración de bases de datos SQL para asegurar la calidad y fluidez de la información.</p>
                         <span class="text-xs font-bold text-primary-600 uppercase tracking-widest flex items-center gap-2">
-                            Ver Proyecto <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            <span data-i18n="project_view">Ver Proyecto</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </span>
                     </a>
 
                     <!-- Análisis de Datos -->
                     <a href="https://github.com/FranckVD/Analisis_world_connected_project" target="_blank" class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group block" style="transition-delay: 100ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">monitoring</span>
-                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Análisis de Datos</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Interpretación de tendencias mediante visualización avanzada y modelos estadísticos para una toma de decisiones basada en evidencia.</p>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white" data-i18n="project_2_title">Análisis de Datos</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="project_2_desc">Interpretación de tendencias mediante visualización avanzada y modelos estadísticos para una toma de decisiones basada en evidencia.</p>
                         <span class="text-xs font-bold text-accent uppercase tracking-widest flex items-center gap-2">
-                            Ver Proyecto <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            <span data-i18n="project_view">Ver Proyecto</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </span>
                     </a>
 
                     <!-- Automatización con IA -->
                     <a href="https://github.com/FranckVD/RAG-ChocolaTech" target="_blank" class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group block" style="transition-delay: 200ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">smart_toy</span>
-                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Automatización con IA</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Implementación de soluciones inteligentes y agentes de IA personalizados que optimizan tareas repetitivas y potencian la eficiencia organizacional.</p>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white" data-i18n="project_3_title">Automatización con IA</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="project_3_desc">Implementación de soluciones inteligentes y agentes de IA personalizados que optimizan tareas repetitivas y potencian la eficiencia organizacional.</p>
                         <span class="text-xs font-bold text-primary-600 uppercase tracking-widest flex items-center gap-2">
-                            Ver Proyecto <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            <span data-i18n="project_view">Ver Proyecto</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </span>
                     </a>
 
                     <!-- Business Intelligence -->
                     <a href="https://github.com/FranckVD/Gestion_Inventario_Produccion" target="_blank" class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group block" style="transition-delay: 300ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">dashboard</span>
-                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Business Intelligence</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Creación de tableros interactivos y KPIs estratégicos que permiten monitorear el rendimiento del negocio en tiempo real.</p>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white" data-i18n="project_4_title">Business Intelligence</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="project_4_desc">Creación de tableros interactivos y KPIs estratégicos que permiten monitorear el rendimiento del negocio en tiempo real.</p>
                         <span class="text-xs font-bold text-accent uppercase tracking-widest flex items-center gap-2">
-                            Ver Proyecto <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            <span data-i18n="project_view">Ver Proyecto</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </span>
                     </a>
 
                     <!-- Análisis de Procesos -->
                     <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-primary-600/50 hover:shadow-2xl hover:shadow-primary-600/20 hover:-translate-y-2 transition-all duration-500 reveal group cursor-pointer" data-status="coming-soon" style="transition-delay: 400ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">account_tree</span>
-                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Análisis de Procesos</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Diagramación BPMN 2.0 y reingeniería operativa para maximizar la productividad y reducir errores manuales.</p>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white" data-i18n="project_5_title">Análisis de Procesos</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="project_5_desc">Diagramación BPMN 2.0 y reingeniería operativa para maximizar la productividad y reducir errores manuales.</p>
                         <span class="text-xs font-bold text-primary-600 uppercase tracking-widest flex items-center gap-2">
-                            En Desarrollo <span class="material-symbols-outlined text-sm">construction</span>
+                            <span data-i18n="project_soon">En Desarrollo</span> <span class="material-symbols-outlined text-sm">construction</span>
                         </span>
                     </div>
 
                     <!-- Documentación y Control -->
                     <div class="p-10 bg-brand-dark/40 backdrop-blur-md rounded-[2.5rem] border border-white/5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 reveal group cursor-pointer" data-status="coming-soon" style="transition-delay: 500ms;">
                         <span class="material-symbols-outlined text-5xl mb-8 service-icon">description</span>
-                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white">Documentación y Control</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Elaboración de manuales SOP, políticas de control interno y estandarización de procedimientos contables.</p>
+                        <h4 class="font-display text-2xl font-extrabold mb-4 text-white" data-i18n="project_6_title">Documentación y Control</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="project_6_desc">Elaboración de manuales SOP, políticas de control interno y estandarización de procedimientos contables.</p>
                         <span class="text-xs font-bold text-accent uppercase tracking-widest flex items-center gap-2">
-                            En Desarrollo <span class="material-symbols-outlined text-sm">construction</span>
+                            <span data-i18n="project_soon">En Desarrollo</span> <span class="material-symbols-outlined text-sm">construction</span>
                         </span>
                     </div>
                 </div>
@@ -245,53 +280,53 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
                 <div class="flex flex-col lg:flex-row gap-20">
                     <div class="lg:w-1/3 reveal">
-                        <h2 class="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4">Trayectoria</h2>
-                        <h3 class="font-display text-4xl font-extrabold tracking-tight mb-6 text-white">Experiencia Profesional</h3>
-                        <p class="text-slate-400 mb-8">+3 años de experiencia como profesional en Información y Control de Gestión con un enfoque práctico en resultados tecnológicos.</p>
+                        <h2 class="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4" data-i18n="trajectory_title_small">Trayectoria</h2>
+                        <h3 class="font-display text-4xl font-extrabold tracking-tight mb-6 text-white" data-i18n="trajectory_title_big">Experiencia Profesional</h3>
+                        <p class="text-slate-400 mb-8" data-i18n="trajectory_desc">+3 años de experiencia como profesional en Información y Control de Gestión con un enfoque práctico en resultados tecnológicos.</p>
                         
                         <div class="space-y-8">
                             <div>
-                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest">Habilidades Técnicas</h4>
+                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest" data-i18n="skills_tech">Habilidades Técnicas</h4>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Python</span>
-                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Automatización de procesos (RPA)</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300" data-i18n="skill_rpa">Automatización de procesos (RPA)</span>
                                     <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Business Intelligence</span>
-                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Bases de datos</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300" data-i18n="skill_db">Bases de datos</span>
                                     <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">SQL</span>
-                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Contabilidad</span>
-                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Modelamiento de Procesos</span>
-                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">Análisis y Modelamiento de Datos</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300" data-i18n="skill_accounting">Contabilidad</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300" data-i18n="skill_bpmn">Modelamiento de Procesos</span>
+                                    <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300" data-i18n="skill_data_modeling">Análisis y Modelamiento de Datos</span>
                                     <span class="px-3 py-1 bg-white/5 dark:bg-brand-dark rounded-lg text-xs shadow-sm border border-white/5 text-slate-300">MS Office</span>
                                 </div>
                             </div>
                             
                             <div>
-                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest">Soft Skills</h4>
+                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest" data-i18n="skills_soft">Soft Skills</h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Mejora de Procesos</span>
-                                    <span class="px-3 py-1 bg-accent/10 text-accent rounded-lg text-xs border border-accent/20">Análisis de Datos</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Gestión Financiera</span>
-                                    <span class="px-3 py-1 bg-accent/10 text-accent rounded-lg text-xs border border-accent/20">Trabajo en equipo</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Gestión documental</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Resolución de problemas</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Comunicación asertiva</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Adaptabilidad</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Honestidad</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Responsabilidad</span>
-                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20">Comunicación efectiva</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_process_improvement">Mejora de Procesos</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent rounded-lg text-xs border border-accent/20" data-i18n="skill_data_analysis">Análisis de Datos</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_finance">Gestión Financiera</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent rounded-lg text-xs border border-accent/20" data-i18n="skill_teamwork">Trabajo en equipo</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_docs">Gestión documental</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_problem_solving">Resolución de problemas</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_assertive_comm">Comunicación asertiva</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_adaptability">Adaptabilidad</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_honesty">Honestidad</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_responsibility">Responsabilidad</span>
+                                    <span class="px-3 py-1 bg-primary-600/10 text-primary-600 rounded-lg text-xs border border-primary-600/20" data-i18n="skill_effective_comm">Comunicación efectiva</span>
                                 </div>
                             </div>
 
                             <div>
-                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest">Idiomas</h4>
+                                <h4 class="font-bold text-sm uppercase text-slate-500 mb-4 tracking-widest" data-i18n="languages">Idiomas</h4>
                                 <div class="flex gap-6">
                                     <div class="flex flex-col">
-                                        <span class="text-sm text-white">Español</span>
-                                        <span class="text-xs text-slate-500 uppercase">Nativo</span>
+                                        <span class="text-sm text-white" data-i18n="lang_es">Español</span>
+                                        <span class="text-xs text-slate-500 uppercase" data-i18n="lang_es_level">Nativo</span>
                                     </div>
                                     <div class="flex flex-col">
-                                        <span class="text-sm text-white">Inglés</span>
-                                        <span class="text-xs text-slate-500 uppercase">Básico (A2)</span>
+                                        <span class="text-sm text-white" data-i18n="lang_en">Inglés</span>
+                                        <span class="text-xs text-slate-500 uppercase" data-i18n="lang_en_level">Básico (A2)</span>
                                     </div>
                                 </div>
                             </div>
@@ -302,33 +337,33 @@
                         <!-- Experiencia: Analista -->
                         <div class="timeline-dot relative pl-10 reveal group">
                             <span class="text-xs text-primary-600 uppercase tracking-widest">May 2022 - Oct 2025</span>
-                            <h4 class="text-xl font-extrabold mt-1 text-white">Analista Administrativo Financiero</h4>
+                            <h4 class="text-xl font-extrabold mt-1 text-white" data-i18n="exp_1_title">Analista Administrativo Financiero</h4>
                             <p class="text-slate-500 text-sm mb-3 italic">Consultorio Jurídico "Vidal-Escalante & Asociados"</p>
                             <ul class="text-slate-400 list-disc list-outside ml-4 space-y-2 text-sm">
-                                <li>Optimización de bases de datos para control de gastos y clientes.</li>
-                                <li>Gestioné y controlé un sistema contable, garantizando la integridad, actualización y trazabilidad de la información financiera.</li>
-                                <li>Elaboré conciliaciones bancarias y reportes financieros gerenciales.</li>
-                                <li>Estandaricé y documenté procedimientos administrativos para fortalecer el control interno y el cumplimiento normativo.</li>
-                                <li>Analicé, diseñé y desarrollé un sistema de gestión de documentos (expedientes y archivos físicos).</li>
-                                <li>Creé canales de datos (ETL) para el análisis del sistema ERP de la empresa.</li>
-                                <li>Desarrollé dashboards Financieros para la toma de decisiones basadas en datos</li>
+                                <li data-i18n="exp_1_li_1">Optimización de bases de datos para control de gastos y clientes.</li>
+                                <li data-i18n="exp_1_li_2">Gestioné y controlé un sistema contable, garantizando la integridad, actualización y trazabilidad de la información financiera.</li>
+                                <li data-i18n="exp_1_li_3">Elaboré conciliaciones bancarias y reportes financieros gerenciales.</li>
+                                <li data-i18n="exp_1_li_4">Estandaricé y documenté procedimientos administrativos para fortalecer el control interno y el cumplimiento normativo.</li>
+                                <li data-i18n="exp_1_li_5">Analicé, diseñé y desarrollé un sistema de gestión de documentos (expedientes y archivos físicos).</li>
+                                <li data-i18n="exp_1_li_6">Creé canales de datos (ETL) para el análisis del sistema ERP de la empresa.</li>
+                                <li data-i18n="exp_1_li_7">Desarrollé dashboards Financieros para la toma de decisiones basadas en datos</li>
                             </ul>
                         </div>
 
                         <!-- Experiencia: Pasante -->
                         <div class="timeline-dot relative pl-10 reveal group">
                             <span class="text-xs text-primary-600 uppercase tracking-widest">Feb 2022 - May 2022</span>
-                            <h4 class="text-xl font-extrabold mt-1 text-white">Pasante Administrativo Contable</h4>
+                            <h4 class="text-xl font-extrabold mt-1 text-white" data-i18n="exp_2_title">Pasante Administrativo Contable</h4>
                             <p class="text-slate-500 text-sm mb-3 italic">Consultorio Jurídico "Vidal-Escalante & Asociados"</p>
-                            <p class="text-slate-400 text-sm leading-relaxed">Apoyo en registros contables, conciliación de cuentas y creación de la base de datos inicial para la gestión de la empresa.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="exp_2_desc">Apoyo en registros contables, conciliación de cuentas y creación de la base de datos inicial para la gestión de la empresa.</p>
                         </div>
 
                         <!-- Educación -->
                         <div class="timeline-dot relative pl-10 reveal group">
                             <span class="text-xs text-primary-600 uppercase tracking-widest">2018 - 2023</span>
-                            <h4 class="text-xl font-extrabold mt-1 text-white">Lic. en Información y Control de Gestión</h4>
-                            <p class="text-slate-500 text-sm mb-3 italic">UAGRM - Graduación Directa con Honores</p>
-                            <p class="text-slate-400 text-sm leading-relaxed">Formación técnica superior en contabilidad y diseño de sistemas de información organizacional.</p>
+                            <h4 class="text-xl font-extrabold mt-1 text-white" data-i18n="edu_1_title">Lic. en Información y Control de Gestión</h4>
+                            <p class="text-slate-500 text-sm mb-3 italic" data-i18n="edu_1_inst">UAGRM - Graduación Directa con Honores</p>
+                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="edu_1_desc">Formación técnica superior en contabilidad y diseño de sistemas de información organizacional.</p>
                         </div>
                     </div>
                 </div>
@@ -339,8 +374,8 @@
         <section id="agenda" class="py-24 px-6 lg:px-12 bg-[#050B14] border-t border-white/5 relative">
             <div class="max-w-5xl mx-auto relative z-10">
                 <div class="text-center mb-12 reveal">
-                    <h2 class="font-display text-4xl font-extrabold text-white mb-4 tracking-tight">Hablemos de tu próximo proyecto</h2>
-                    <p class="text-slate-400 text-lg">Seleccione un horario disponible para una sesión estratégica gratuita.</p>
+                    <h2 class="font-display text-4xl font-extrabold text-white mb-4 tracking-tight" data-i18n="agenda_title">Hablemos de tu próximo proyecto</h2>
+                    <p class="text-slate-400 text-lg" data-i18n="agenda_desc">Seleccione un horario disponible para una sesión estratégica gratuita.</p>
                 </div>
                 
                 <div class="flex justify-center reveal px-4">
@@ -349,7 +384,7 @@
                        class="btn-navy-teal animate-tech-pulse inline-flex items-center justify-center gap-2 px-5 py-3 md:px-10 md:py-5 text-white rounded-full text-[14px] md:text-xl font-bold shadow-2xl transition-all w-full max-w-[280px] md:max-w-none md:w-auto text-center">
                         <div class="shimmer-line"></div>
                         <span class="material-symbols-outlined text-[18px] md:text-2xl">calendar_today</span>
-                        <span>Reservar llamada gratis</span>
+                        <span data-i18n="btn_book_call">Reservar llamada gratis</span>
                     </a>
                 </div>
             </div>
@@ -371,12 +406,12 @@
                 <div class="w-20 h-20 bg-primary-600/10 rounded-full flex items-center justify-center mx-auto mb-8">
                     <span class="material-symbols-outlined text-5xl text-primary-600 animate-pulse">construction</span>
                 </div>
-                <h3 id="modal-title" class="font-display text-3xl font-extrabold text-white">Proyecto en Desarrollo</h3>
-                <p class="text-slate-400 text-lg leading-relaxed">
+                <h3 id="modal-title" class="font-display text-3xl font-extrabold text-white" data-i18n="modal_maint_title">Proyecto en Desarrollo</h3>
+                <p class="text-slate-400 text-lg leading-relaxed" data-i18n="modal_maint_desc">
                     Estoy trabajando arduamente en esta sección para ofrecerte una experiencia de alta calidad. ¡Pronto estará disponible!
                 </p>
                 <div class="pt-6">
-                    <button onclick="closeModal()" class="btn-primary px-8 py-3 bg-primary-600 text-white rounded-full font-bold">Entendido</button>
+                    <button onclick="closeModal()" class="btn-primary px-8 py-3 bg-primary-600 text-white rounded-full font-bold" data-i18n="btn_understood">Entendido</button>
                 </div>
             </div>
         </div>
@@ -395,7 +430,7 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="font-display font-extrabold text-white text-lg tracking-tight">Ramses Callaú Rocha</span>
-                    <span class="text-xs text-slate-500 uppercase tracking-widest">Información y Control de Gestión</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-widest" data-i18n="footer_role">Información y Control de Gestión</span>
                 </div>
             </div>
             
@@ -411,7 +446,7 @@
             </div>
             
             <p class="text-slate-400 text-sm leading-relaxed text-center md:text-right">
-                © 2026 Hecho con ♥️ by FranckVD<br>
+                <span data-i18n="footer_made_by">© 2026 Hecho con ♥️ by FranckVD</span><br>
                 <span class="text-slate-500">Santa Cruz, Bolivia</span>
             </p>
         </div>
